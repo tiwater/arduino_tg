@@ -1,0 +1,74 @@
+#ifndef __GENIE_SAL_GPIO_H__
+#define __GENIE_SAL_GPIO_H__
+
+#ifdef BOARD_TG7120B_EVB
+#include "gpio.h"
+#elif defined(BOARD_TG7121B_EVB)
+#include "io_config.h"
+#elif defined(BOARD_TG7130B_EVB)
+#include "io_config.h"
+#endif
+
+#if defined(BOARD_TG7120B_EVB)
+#define GENIE_LPM_WAKEUP_GPIO_1 (P14)
+#define GENIE_LPM_WAKEUP_GPIO_2 (P15)
+#define GENIE_LPM_WAKEUP_GPIO_3 (P24)
+#define GENIE_LPM_WAKEUP_GPIO_4 (P25)
+#define GENIE_LPM_WAKEUP_GPIO_5 (P26)
+#define GENIE_LPM_WAKEUP_GPIO_6 (P31)
+
+#define GENIE_LED_GPIO_1 (P23)
+#define GENIE_LED_GPIO_2 (P31)
+#define GENIE_LED_GPIO_3 (P32)
+
+#define GENIE_ADC_GPIO_1 (P18)
+
+#define GENIE_OUTPUT_PIN_1_A (P18)
+#define GENIE_OUTPUT_PIN_1_B (P20)
+#define GENIE_OUTPUT_PIN_2_A (P25)
+#define GENIE_OUTPUT_PIN_2_B (P26)
+#define GENIE_OUTPUT_PIN_3_A (P33)
+#define GENIE_OUTPUT_PIN_3_B (P34)
+#elif defined(BOARD_TG7121B_EVB)
+#define GENIE_LPM_WAKEUP_GPIO_1 (PA01)
+#define GENIE_LPM_WAKEUP_GPIO_2 (PA02)
+#define GENIE_LPM_WAKEUP_GPIO_3 (PA09)
+#define GENIE_LPM_WAKEUP_GPIO_4 (PB05)
+#define GENIE_LPM_WAKEUP_GPIO_5 (PB06)
+#define GENIE_LPM_WAKEUP_GPIO_6 (PB15)
+
+#define GENIE_LED_GPIO_1 (PB14)
+#define GENIE_LED_GPIO_2 (PA07)
+#define GENIE_LED_GPIO_3 (PA07)
+
+#define GENIE_ADC_GPIO_1 (0xFD) //Channel 10 this is VBAT
+
+#define GENIE_OUTPUT_PIN_1_A (PA07)
+#define GENIE_OUTPUT_PIN_1_B (PA07)
+#define GENIE_OUTPUT_PIN_2_A (PA07)
+#define GENIE_OUTPUT_PIN_2_B (PA07)
+#define GENIE_OUTPUT_PIN_3_A (PA07)
+#define GENIE_OUTPUT_PIN_3_B (PA07)
+#elif defined(BOARD_TG7130B_EVB)
+#define GENIE_LPM_WAKEUP_GPIO_1 (PA01)
+#define GENIE_LPM_WAKEUP_GPIO_2 (PA02)
+#define GENIE_LPM_WAKEUP_GPIO_3 (PA09)
+#define GENIE_LPM_WAKEUP_GPIO_4 (PB05)
+#define GENIE_LPM_WAKEUP_GPIO_5 (PB06)
+#define GENIE_LPM_WAKEUP_GPIO_6 (PB15)
+
+#define GENIE_LED_GPIO_1 (PB14)
+#define GENIE_LED_GPIO_2 (PA07)
+#define GENIE_LED_GPIO_3 (PA07)
+
+#define GENIE_ADC_GPIO_1 (0xFD) //Channel 10 this is VBAT
+
+#define GENIE_OUTPUT_PIN_1_A (PA07)
+#define GENIE_OUTPUT_PIN_1_B (PA07)
+#define GENIE_OUTPUT_PIN_2_A (PA07)
+#define GENIE_OUTPUT_PIN_2_B (PA07)
+#define GENIE_OUTPUT_PIN_3_A (PA07)
+#define GENIE_OUTPUT_PIN_3_B (PA07)
+#endif
+
+#endif

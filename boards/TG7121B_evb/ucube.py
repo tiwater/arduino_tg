@@ -1,0 +1,1 @@
+linux_only_targets="genie_mesh_light_ctl  genie_mesh_node_ctl"

@@ -1,0 +1,62 @@
+Import('env')
+src = [
+    'src/spi_flash.c',
+    'src/uart.c',
+    'src/lscache.c',
+    'src/lsi2c.c',
+]
+
+if env['IC'] == 'le501x':
+    src += [
+    'src/lsqspi.c',
+    'src/lspdm.c',
+    'src/lspdm_dma.c',
+    'src/lsiwdg.c',
+    'src/lsadc.c',
+    'src/lsrtc.c',
+    'src/lsssi.c',
+    'src/lstrng.c',
+    'ecc/lsecc.c',
+    'src/lsspi.c',
+    'src/lspis.c',
+    'src/lscrypt.c',
+    'src/spi_flash_lsqspi.c',
+    'src/lstimer.c',
+    ]
+elif env['IC'] == 'gemini':
+    src += [
+    'src/lsqspiv2.c',
+    'src/spi_flash_lsqspiv2.c',
+    'src/lssha.c',
+    'src/lscrc.c',
+    ]
+else:
+    src += [
+    'src/lsqspi.c',
+    'src/spi_flash_lsqspi.c',
+    'src/lspatch.c',
+    ]
+
+if env['IC'] == 'taurus':
+    src += [
+    'src/lspis.c',
+    ]
+
+if env['IC'] != 'taurus' and env['IC'] == 'le501x':
+    src += ['src/calc_div.c',
+            'src/uart_dma.c',
+            'src/adc_dma.c',
+            'src/dmac.c',
+            'src/lsssi_dma.c',
+            'src/lsspi_dma.c',
+    ]
+
+inc = [
+    'ecc',
+    'api',
+    'inc',
+]
+src_files = File(src)
+inc_dirs = Dir(inc)
+
+Return("src_files","inc_dirs")
